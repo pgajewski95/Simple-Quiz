@@ -1,15 +1,33 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" th:href="@{/style.css}">
+    <link rel="stylesheet"
+          th:href="@{/style.css}">
 </head>
 <body>
 
 <h1 th:text="${test.name}"></h1>
 
-<h3 th:text="${question.content}"></h3>
+<h3 th:if="${question}"
+    th:text="${question.content}"></h3>
+
+<h2 th:if="${message}"
+    th:text="${message}"></h2>
+
+<form th:if =${question}
+      th:action="@{|/tests/${id}/continue|}" method="get">
+
+    <select name="correct">
+        <option value=1>TAK</option>
+        <option value="0">NIE</option>
+
+    </select>
+    <input type="submit" value="Następne">
+
+</form>
+
 
 
 </body>
