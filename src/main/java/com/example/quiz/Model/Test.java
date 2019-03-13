@@ -17,7 +17,7 @@ public class Test {
         this.id = id;
     }
     //nazwa klucza obcego po drugiej stronie
-    @OneToMany(mappedBy = "test")
+    @OneToMany(mappedBy = "test", cascade = CascadeType.ALL)
     private List<Question> questionList = new ArrayList<>();
 
     public List<Question> getQuestionList() {
@@ -42,5 +42,10 @@ public class Test {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void addQuestion(Question question){
+        question.setTest(this);
+        questionList.add(question);
     }
 }
