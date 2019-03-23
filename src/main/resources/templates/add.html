@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Dodaj nowe pytanie</h3>
+
+<form action="/new">
+    <p>Podaj Nazwe Testu</p><br>
+    <input type="text" name="name" value="">
+    <p>Podaj pytanie</p><br>
+    <input type="text" name="content" value="">
+    <p>Podaj prawidłowa odpowiedz</p><br>
+    <input type="radio" name="correct" value="true">True<br>
+    <input type="radio" name="correct" value="false">False<br>
+    <button formaction="/new">Wyslij</button>
+
+
+
+<button type="reset">Resetuj</button>
+</form>
+</body>
+</html>
